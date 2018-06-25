@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Warm App Login</title>
+
+<script language="JavaScript">
+
+	document.write("<center><h1>Welcome to WarmApp! We are glad that you are here!</h1></center>");
+
+	
+function logoutButton(){
+	window.open("index1.html","_self");
+}
+function setting(){
+	var temp=Math.floor(Math.random()*30);
+	var temp1=Math.floor(Math.random()*30);
+	var sign=Math.random();
+	var sign1=Math.random();
+	if(sign<0.5)
+		temp*=-1;
+	if(sign1<0.5)
+		temp1*=-1;
+	outTemp=temp;
+	inTemp=temp1;
+	document.temperatureForm.outside.value=outTemp;
+	document.temperatureForm.inside.value=inTemp;
+}
+
+function submition(){
+	var insideTemp=document.temperatureForm.inside.value;
+	if(insideTemp==""){
+		alert("You need to click See temperature button first in order to submit a request.");
+		return;
+	}
+	var wantedTempe=document.temperatureForm.wantedTemp.value;
+	if(wantedTempe==""){
+		alert("You haven't set the parameters.");
+		return;
+	}
+	if(wantedTempe<insideTemp)
+		alert("Appartment is already heated.");
+	else{
+		if(wantedTempe<0)
+			alert("You may want to choose a higher temperature.");
+		else{
+			if(wantedTempe>30)
+				alert("Chosen temperature is too high.");
+			else
+				alert("Your request has been recorded successfully.");
+		}
+	}
+}
+
+</script>
+</head>
+<body>
+<center>
+<form name="temperatureForm">
+<table border="1">
+	<tr>
+		<td>Outside temperature :</td>
+		<td><input type="number" name="outside" readonly="readonly"></td>
+	</tr>
+	<br><br>
+	<tr>
+		<td>Appartment temperature :</td>
+		<td><input type="number" name="inside" readonly="readonly"></td>
+	</tr>
+	<br><br>
+	<tr>
+		<td>Wanted temperature :</td>
+		<td><input type="number" name="wantedTemp" size="35"></td>
+	</tr>
+	<br><br>
+	<tr>
+		<td>Set timer:</td>
+		<td><input type="time" name="timer"></td>
+	</tr>
+	<br><br>
+</table>
+	<br><br><br>
+	<tr>
+		<input type="button" value="See temperature" onClick="setting()">
+	</tr>
+	<tr>
+		<input type="button" name="submitingB"  value="Submit" onClick="submition()">
+	</tr>
+	<tr>
+		<input type="button" value="Logout" onClick="logoutButton()">
+	</tr>
+</form>
+</center>
+</body>
+</html>

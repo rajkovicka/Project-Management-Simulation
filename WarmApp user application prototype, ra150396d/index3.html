@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Warm App Login</title>
+</head>
+<body>
+<script language="JavaScript">
+
+function login(){
+	var passText=document.loginForm.pass.value;
+	if(passText=="")
+		resultInfo=false;
+	else	
+		resultInfo=true;
+		
+	var test=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	var emailText=document.loginForm.email.value;
+	
+	var resultEmail = emailText.match(test);
+	if (resultInfo==true && resultEmail != null)
+		window.open("index4.html","_self");
+	else 
+		alert("Your credentials are not valid, please try again.");
+}
+
+function backLogin(){
+	window.open("index1.html","_self");
+}
+
+	document.write("<center><h1>Login to WarmApp</h1></center>");
+</script>
+<center>
+
+<form name="loginForm">
+<table border="1">
+		<td>email :</td>
+		<td><input type="text" name="email" size="35"></td>
+	</tr>
+	<br><br>
+	<tr>
+		<td>Password :</td>
+		<td><input type="password" name="pass" size="20" maxlength="30"></td>
+	</tr>
+</table>
+	<br><br><br>
+	<tr>
+		<input type="button" value="Login" onClick="login()">
+	</tr>
+	<tr>
+		<input type="reset" value="Reset">
+	</tr>
+	<tr>
+		<input type="button" value="Back" onClick="backLogin()">
+	</tr>
+</form>
+</center>
+</body>
+</html>

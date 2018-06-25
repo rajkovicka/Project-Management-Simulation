@@ -1,0 +1,35 @@
+*******************************************************************************************
+*****************   Uputstvo za koriscenje WarmApp serverske aplikacije   *****************
+*******************************************************************************************
+
+Na pocetnom ekranu postoje dve liste - lista naloga koji cekaju na autorizaciju od strane
+administratora i lista naloga koji su u upotrebi. Za administratora je moguce da odobri
+neodobrene naloge ili da obrise neki od naloga. Kod naloga u upotrebi moguce je direktno
+dodati neki nalog, ili ga obrisati. Obe liste imaju svoj pretrazivac ukoliko postoji
+previse naloga za manuelnu pretragu.
+
+Za odobravanje neodobrenih naloga, dodavanje naloga u upotrebi ili brisanje iz obe liste
+potrebno je prvo obaviti autorizaciju. Kada kliknete na neko od tih dugmica iskocice nova
+forma u kojoj treba popuniti korisnicko ime i sifru admina, a zatim pritisnuti autorizacija
+admina. Ukoliko autorizacija bude neuspesna pored dugmeta koje je izabrano ce se pojaviti
+crveni uzvicnik sa porukom. Nakon toga, ukoliko je izabrana opcija odobravanje naloga ili
+brisanje iz nekih od listi, ukoliko je neki od naloga oznacen, radnja ce se izvrsiti.
+Ukoliko nijedan nalog nije bio oznacen, pored dugmeta koje je izabrano ce se pojaviti
+crveni uzvicnik sa porukom. U slucaju da je izabrana opcija dodavanja naloga i autorizacija
+je uspesno izvrsena, otvorice se treca forma u kojoj treba uneti korisnicko ime i sifru
+za novi nalog koji se dodaje.
+
+Da bi se izvrsila pretraga po listama potrebno je uneti korisnicko ime koje se pretrazuje
+i kliknuti na dugme pretrazi. Ukoliko pretraga bude neuspesna tj. takav nalog ne postoji
+u listi, pored dugmeta ce se pojaviti crveni uzvicnik sa porukom.
+
+Klikom na dugme 'Preci na regulaciju temperature' otvara se nova forma u kojoj je moguce
+videti podatke o regulaciji temperature korisnika. Vrednosti su zasticene i moguca je
+promena zeljene temperature i zeljenog vremena uz autorizaciju. Kao i kod prve forme,
+ukoliko je autorizacija neuspesna, pojavice se crveni uzvicnik sa porukom pored dugmeta
+za izmenu parametara oznacenog korisnika. Ukoliko je autorizacija uspesna otvorice se
+nova forma u koju treba uneti zeljenu temperaturu i vreme i potvrditi. Vreme se unosi u
+formatu HH:MM:SS, dok temperatura moze biti i decimalna, gde se . koristi za odvajanje
+celog i realnog dela.
+
+Za druga pitanja poslati mail na support@warmapp.rs

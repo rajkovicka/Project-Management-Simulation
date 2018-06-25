@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Warm App Login</title>
+</head>
+<body>
+<script language="JavaScript">
+
+function registration(){
+
+	var nameText=document.registerForm.username.value;
+	var resultInfo;
+	if(nameText=="")
+		resultInfo=false;
+	else
+		resultInfo=true;
+
+	var surnameText=document.registerForm.surname.value;
+	if(surnameText=="")
+		resultInfo=false;
+	
+	var appNo=document.registerForm.appartment.value;
+	if(appNo<1 || appNo>200 || appNo%1!=0)
+		resultInfo=false;
+		
+	var appKey=document.registerForm.key.value;
+	if(appKey=="")
+		resultInfo=false;
+		
+	var passText=document.registerForm.pass.value;
+	if(passText=="" || passText.length<10 || passText.length>30)
+		resultInfo=false;
+		
+	var test=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	var emailText=document.registerForm.email.value;
+	
+	var resultEmail = emailText.match(test);
+	if (resultInfo==true && resultEmail != null)
+		alert("You have successfully submitted your request for registration, please expect a verification email in the next 24 hours.")
+	else {
+		if(resultInfo==false && resultEmail!=null)
+			alert("The information you entered is not correct, please check your information.");
+		else{
+			if(resultInfo==true && resultEmail==null)
+				alert("This email address is either already registered or not correct, please check your information.");
+			else
+				alert("Multiple information mistakes, please check your information.");
+		}
+	}
+}
+
+function backRegister(){
+	window.open("index1.html","_self");
+}
+
+	document.write("<center><h1>Register to use WarmApp</h1></center>");
+</script>
+<center>
+
+<form name="registerForm">
+<table border="1">
+	<tr>
+		<td>Name :</td>
+		<td><input type="text" name="username" size="35"></td>
+	</tr>
+	<br><br>
+	<tr>
+		<td>Surname :</td>
+		<td><input type="text" name="surname" size="35"></td>
+	</tr>
+	<br><br>
+	<tr>
+		<td>Appartment No :</td>
+		<td><input type="number" name="appartment" size="35"></td>
+	</tr>
+	<br><br>
+	<tr>
+		<td>Access key for your appartment :</td>
+		<td><input type="text" name="key" size="35"></td>
+	</tr>
+	<br><br>
+	<tr>
+		<td>email :</td>
+		<td><input type="text" name="email" size="35"></td>
+	</tr>
+	<br><br>
+	<tr>
+		<td>Password (minimum length 10, maximum 30):</td>
+		<td><input type="password" name="pass" size="20" maxlength="30"></td>
+	</tr>
+</table>
+	<br><br><br>
+	<tr>
+		<input type="button" value="Register" onClick="registration()">
+	</tr>
+	<tr>
+		<input type="reset" value="Reset">
+	</tr>
+	<tr>
+		<input type="button" value="Back" onClick="backRegister()">
+	</tr>
+</form>
+</center>
+</body>
+</html>
